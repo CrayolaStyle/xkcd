@@ -1,17 +1,17 @@
 $(document).ready(function() {
     console.log('ready')
-    const variable = randomIntFromInterval(1,600);
+  const variable = randomIntFromInterval(1,600);
     $.get('https://galvanize-cors.herokuapp.com/https://xkcd.com/'+variable+'/info.0.json').then(function(data) {
-    console.log(variable);
+    // console.log(variable);
     console.log(data);
-    const header = $('<h3>');
+    var header = $('<h3>');
     header.text(data.title);
     $('body').append(header);
-    const imgHolder = $('<img>');
+    var imgHolder = $('<img>');
     imgHolder.attr("src", data.img);
     $('body').append(imgHolder);
     $('p').append(variable);
-
+  //
   })
 
 
